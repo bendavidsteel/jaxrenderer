@@ -99,7 +99,7 @@ class PhongReflectionTextureShader(
     """PhongReflection Shading with simple parallel lighting and texture."""
 
     @staticmethod
-    @jaxtyped
+    @jaxtyped(typechecker=None)
     @partial(jit, inline=True)
     @add_tracing_name
     def vertex(
@@ -133,7 +133,7 @@ class PhongReflectionTextureShader(
         )
 
     @staticmethod
-    @jaxtyped
+    @jaxtyped(typechecker=None)
     @partial(jit, inline=True)
     @add_tracing_name
     def interpolate(
@@ -153,7 +153,7 @@ class PhongReflectionTextureShader(
         return varying
 
     @staticmethod
-    @jaxtyped
+    @jaxtyped(typechecker=None)
     @partial(jit, inline=True)
     @add_tracing_name
     def fragment(
@@ -236,7 +236,7 @@ class PhongReflectionTextureShader(
         )
 
     @staticmethod
-    @jaxtyped
+    @jaxtyped(typechecker=None)
     @partial(jit, inline=True)
     @add_tracing_name
     def mix(

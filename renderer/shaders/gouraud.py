@@ -53,7 +53,7 @@ class GouraudShader(
     """Gouraud Shading with simple parallel lighting."""
 
     @staticmethod
-    @jaxtyped
+    @jaxtyped(typechecker=None)
     @partial(jit, inline=True)
     @add_tracing_name
     def vertex(
@@ -89,7 +89,7 @@ class GouraudShader(
         )
 
     @staticmethod
-    @jaxtyped
+    @jaxtyped(typechecker=None)
     @partial(jit, inline=True)
     @add_tracing_name
     def fragment(

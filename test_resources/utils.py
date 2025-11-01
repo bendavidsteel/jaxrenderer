@@ -27,7 +27,7 @@ class Model:
     faces_norm: FaceIndices
     faces_uv: FaceIndices
 
-    @jaxtyped
+    @jaxtyped(typechecker=None)
     def __post_init__(self) -> None:
         assert isinstance(self.verts, Vertices), self.verts.shape
         assert isinstance(self.norms, Vertices), self.norms.shape

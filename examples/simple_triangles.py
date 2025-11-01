@@ -114,7 +114,7 @@ class ExtraMixerOutput(NamedTuple):
 
 class _Shader(Shader[ExtraInput, ExtraFragmentData, ExtraMixerOutput]):
     @staticmethod
-    @jaxtyped
+    @jaxtyped(typechecker=None)
     @jit
     def vertex(
         gl_VertexID: ID,
@@ -149,7 +149,7 @@ class _Shader(Shader[ExtraInput, ExtraFragmentData, ExtraMixerOutput]):
         )
 
     @staticmethod
-    @jaxtyped
+    @jaxtyped(typechecker=None)
     @jit
     def fragment(
         gl_FragCoord: Vec4f,
@@ -179,7 +179,7 @@ class _Shader(Shader[ExtraInput, ExtraFragmentData, ExtraMixerOutput]):
         )
 
     @staticmethod
-    @jaxtyped
+    @jaxtyped(typechecker=None)
     @jit
     def mix(
         gl_FragDepth: Float[Array, "primitives"],

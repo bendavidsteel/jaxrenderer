@@ -115,7 +115,7 @@ class PhongTextureDarbouxShader(
     represented in tangent space (Darboux frame)."""
 
     @staticmethod
-    @jaxtyped
+    @jaxtyped(typechecker=None)
     @partial(jit, inline=True)
     @add_tracing_name
     def vertex(
@@ -171,7 +171,7 @@ class PhongTextureDarbouxShader(
         )
 
     @staticmethod
-    @jaxtyped
+    @jaxtyped(typechecker=None)
     @partial(jit, inline=True)
     @add_tracing_name
     def interpolate(
@@ -207,7 +207,7 @@ class PhongTextureDarbouxShader(
         return varying
 
     @staticmethod
-    @jaxtyped
+    @jaxtyped(typechecker=None)
     @partial(jit, inline=True)
     @add_tracing_name
     def fragment(
@@ -294,7 +294,7 @@ class PhongTextureDarbouxShader(
         )
 
     @staticmethod
-    @jaxtyped
+    @jaxtyped(typechecker=None)
     @partial(jit, inline=True)
     @add_tracing_name
     def mix(

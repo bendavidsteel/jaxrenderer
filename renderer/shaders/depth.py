@@ -42,7 +42,7 @@ class DepthShader(
     """Depth Shading."""
 
     @staticmethod
-    @jaxtyped
+    @jaxtyped(typechecker=None)
     @partial(jit, inline=True)
     @add_tracing_name
     def vertex(
